@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script.js" defer></script>
+
+<script>
+  function toggleTheme() {
+    document.body.classList.toggle('light-mode');
+    localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    // Opcional: Alternar ícone
+    const icon = document.querySelector('.btn-theme-toggle i');
+    icon.classList.toggle('fa-moon');
+    icon.classList.toggle('fa-sun');
+  }
+  window.onload = () => {
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light-mode');
+      document.querySelector('.btn-theme-toggle i')?.classList.replace('fa-moon', 'fa-sun');
+    }
+  };
+</script>
+
+</head>
+<body>
+    <div class="interface">
+        <div class="container">
+            <section class="perfil-header">
+                <a href="index.html" class="btn-voltar"><i class="fas fa-arrow-left"></i></a>
+                <h2>Perfil do Usuário</h2>
+                <button class="btn-theme-toggle" onclick="toggleTheme()" aria-label="Alternar entre modo claro e escuro">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </section>
+            <section class="perfil-info">
+                <h3>Informações Pessoais</h3>
+                <p><strong>Nome:</strong> <span id="nomeUsuario">Carregando...</span></p>
+                <p><strong>Nome Materno:</strong> <span id="nomeMaterno">Carregando...</span></p>
+                <p><strong>CPF:</strong> <span id="cpf">Carregando...</span></p>
+                <p><strong>E-mail:</strong> <span id="email">Carregando...</span></p>
+                <p><strong>Telefone Celular:</strong> <span id="telefoneCelular">Carregando...</span></p>
+                <p><strong>Telefone Fixo:</strong> <span id="telefoneFixo">Carregando...</span></p>
+                <p><strong>CEP:</strong> <span id="cep">Carregando...</span></p>
+                <p><strong>Endereço:</strong> <span id="rua">Carregando...</span></p>
+                <p><strong>Número:</strong> <span id="numero">Carregando...</span></p>
+                <p><strong>Complemento:</strong> <span id="complemento">Carregando...</span></p>
+                <p><strong>Login:</strong> <span id="login">Carregando...</span></p>
+            </section>
+            <section class="perfil-pre-venda">
+                <h3>Pré-venda Selecionada</h3>
+                <p><strong>Edição:</strong> <span id="edicaoSelecionada">Nenhuma edição selecionada</span></p>
+                <button onclick="window.location.href='Tela_PreVenda.html'">Escolher outra pré-venda</button>
+                <button onclick="window.location.href='Tela_Pagamento.html'">Ir para Pagamento</button>
+                <button id="logout-btn" onclick="logoutUsuario()">Sair</button>
+            </section>
+        </div>
+    </div>
+    <script>
+        // Carrega os dados do usuário do localStorage
+        function carregarPerfil() {
+            let usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+            let cadastros = JSON.parse(localStorage.getItem('cadastros')) || [];
+
+            // Se não houver usuário logado, tenta usar o último cadastro
+            if (!usuarioLogado && cadastros.length > 0) {
+                usuarioLogado = cadastros[cadastros.length - 1];
+                localStorage.setItem('usuarioLogado', JSON.stringify(usuarioLogado));
+            }
+
+            // Se não houver usuário, redireciona para o cadastro
+            if (!usuarioLogado) {
+                showToast('Nenhum usuário logado ou cadastrado. Por favor, cadastre-se ou faça login.', 'error');
+                window.location.href = 'Tela_Login.html';
+                return;
+            }
+
+            // Preenche os campos com os dados do usuário
+            document.getElementById('nomeUsuario').textContent = usuarioLogado.nome || 'Não informado';
+            document.getElementById('nomeMaterno').textContent = usuarioLogado.nomeMaterno || 'Não informado';
+            document.getElementById('cpf').textContent = usuarioLogado.cpf || 'Não informado';
+            document.getElementById('email').textContent = usuarioLogado.email || 'Não informado';
+            document.getElementById('telefoneCelular').textContent = usuarioLogado.telefoneCelular || 'Não informado';
+            document.getElementById('telefoneFixo').textContent = usuarioLogado.telefoneFixo || 'Não informado';
+            document.getElementById('cep').textContent = usuarioLogado.cep || 'Não informado';
+            document.getElementById('rua').textContent = usuarioLogado.rua || 'Não informado';
+            document.getElementById('numero').textContent = usuarioLogado.numero || 'Não informado';
+            document.getElementById('complemento').textContent = usuarioLogado.complemento || 'Não informado';
+            document.getElementById('login').textContent = usuarioLogado.login || 'Não informado';
+            document.getElementById('edicaoSelecionada').textContent = usuarioLogado.edicaoSelecionada || 'Nenhuma edição selecionada';
+        }
+
+        // Carrega o perfil ao abrir a página
+        window.onload = carregarPerfil;
+    </script>
+</body>
+</html>

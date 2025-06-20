@@ -1,0 +1,238 @@
+::-webkit-scrollbar {
+  width: 0;
+}
+
+body {
+  background-color: #1a1209;
+  font-family: 'Poppins', Arial, sans-serif; /* Modificado: Adicionado Poppins como principal */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Adicionado para transição suave */
+}
+
+.container {
+  background-color: #0e0a06;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #ff8c00;
+  width: 400px;
+  overflow-y: auto;
+  height: 600px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Adicionado para transição suave */
+}
+
+.header h2 {
+  text-align: center;
+  color: #d4af37;
+  margin-bottom: 20px;
+  transition: color 0.3s ease; /* Adicionado para transição suave */
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+.form-control label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #fff; /* Adicionado para explicitar cor no dark-mode */
+  transition: color 0.3s ease; /* Adicionado para transição suave */
+}
+
+.form-control input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #8b4513;
+  border-radius: 6px;
+  background-color: #1a1209;
+  color: #fff;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Adicionado para transição suave */
+}
+
+.form-control input::placeholder {
+  color: #bbb;
+  transition: color 0.3s ease; /* Adicionado para transição suave */
+}
+
+.btn-voltar-pagina {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease; /* Adicionado para transição suave */
+}
+
+.container .header .btn-voltar-pagina:hover {
+  transform: scale(1.1);
+  text-shadow: 0 4px 20px rgba(139, 69, 19, 0.8);
+}
+
+.btn-voltar-pagina i {
+  font-size: 24px;
+}
+
+form .button {
+  width: 100%;
+  padding: 12px;
+  background-color: #b35c1e;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease; /* Adicionado color para transição suave */
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+form .button:hover {
+  background-color: #c66c28;
+  transform: scale(1.05);
+}
+
+.btn-theme-toggle  {
+    background: none;
+    border: none;
+    color: #e6e6e6;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.btn-theme-toggle:hover {
+    color: #d4af37;
+}
+
+
+/* ajustando especificamente o input do cep */
+.form-control:has(#cep) {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.form-control #cep {
+  flex: 1;
+}
+
+.form-control #buscarCep {
+  width: auto;
+  padding: 10px 15px;
+  margin-top: 0;
+}
+
+/* Estilos para light-mode */
+body.light-mode {
+  background-color: #f8f1e9;
+  background-image: url('images/parchment-texture-light.png'); /* Adicionado para consistência */
+  color: #2b2b2b;
+}
+
+body.light-mode .container {
+  background-color: #fff8e1;
+  box-shadow: 0 0 15px rgba(139, 69, 19, 0.3); /* Modificado para cor marrom suave */
+}
+
+body.light-mode .header h2 {
+  color: #8b4513;
+}
+
+body.light-mode .form-control label {
+  color: #2b2b2b;
+}
+
+body.light-mode .form-control input {
+  background-color: #fff8e1;
+  color: #2b2b2b;
+  border-color: #8b4513;
+}
+
+body.light-mode .form-control input::placeholder {
+  color: #666;
+}
+
+body.light-mode .btn-voltar-pagina {
+  color: #8b4513;
+}
+
+body.light-mode .container .header .btn-voltar-pagina:hover {
+  transform: scale(1.1);
+  text-shadow: 0 4px 20px rgba(160, 82, 45, 0.8); /* Modificado para tom mais claro */
+}
+
+body.light-mode button {
+  background-color: #d4af37;
+  color: #2b2b2b;
+}
+
+body.light-mode button:hover {
+  background-color: #e6c07b;
+  transform: scale(1.05);
+}
+
+body.light-mode .btn-theme-toggle {
+    color: #2b2b2b;
+}
+
+body.light-mode .btn-theme-toggle:hover {
+    color: #a0522d;
+}
+
+/* Media query para responsividade (telas até 768px) */
+@media (max-width: 768px) {
+  .container {
+    width: 90%; /* Modificado para ocupar mais espaço */
+    padding: 20px; /* Reduzido para melhor ajuste */
+    height: auto; /* Ajustado para altura dinâmica */
+    max-height: 80vh; /* Limitado para evitar corte */
+  }
+
+  .header h2 {
+    font-size: 1.8em; /* Reduzido para telas menores */
+  }
+
+  .form-control input {
+    padding: 10px; /* Reduzido para melhor proporção */
+    font-size: 0.9em; /* Ajustado para legibilidade */
+  }
+
+  button {
+    padding: 10px; /* Reduzido para proporção */
+    font-size: 1em; /* Ajustado para legibilidade */
+  }
+
+  .btn-voltar-pagina i {
+    font-size: 20px; /* Reduzido para proporção */
+  }
+
+  .form-control #buscarCep {
+    padding: 8px 12px; /* Ajustado para proporção */
+  }
+}
+
+/* Media query para telas muito pequenas (até 400px) */
+@media (max-width: 400px) {
+  .form-control:has(#cep) {
+    flex-direction: column; /* Empilhar input e botão verticalmente */
+    align-items: stretch;
+  }
+
+  .form-control #buscarCep {
+    width: 100%; /* Botão ocupa largura total */
+    margin-top: 10px; /* Restaurado para espaçamento */
+  }
+
+  .container {
+    padding: 15px; /* Mais redução para telas muito pequenas */
+  }
+
+  .header h2 {
+    font-size: 1.5em; /* Ainda menor para ajuste */
+  }
+}

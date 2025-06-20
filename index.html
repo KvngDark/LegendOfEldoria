@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <script src="scripts.js" defer></script>
+    <title>Legends of Eldoria | Ancient Forge Studios</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script>
+  function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById('theme-icon');
+
+    body.classList.toggle("light-mode");
+    body.classList.toggle("dark-mode");
+
+    const isLight = body.classList.contains("light-mode");
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+
+    icon.className = isLight ? "bi bi-sun-fill" : "bi bi-moon-fill";
+  }
+
+  window.onload = () => {
+    const savedTheme = localStorage.getItem("theme") || "dark";
+    const body = document.body;
+    const icon = document.getElementById('theme-icon');
+
+    body.classList.add(savedTheme + "-mode");
+    if (icon) icon.className = savedTheme === "light" ? "bi bi-sun-fill" : "bi bi-moon-fill";
+  };
+    </script>
+
+</head>
+
+<body>
+    <a href="#eldoria" class="btn-voltar">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+    <header id="header">
+    <div class="interface">
+        <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+        <section class="menu-desktop">
+            <nav>
+                <ul>
+                    <li><a href="#historia">História</a></li>
+                    <li><a href="#caracteristicas">Características</a></li>
+                    <li><a href="Tela_PreVenda.html">Edições</a></li>
+                    <li><a href="#cronograma">Cronograma</a></li>
+                    <li><a href="#pre-venda">Pré-Venda</a></li>
+                </ul>
+            </nav>
+        </section>
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#historia">História</a></li>
+                <li><a href="#caracteristicas">Características</a></li>
+                <li><a href="Tela_PreVenda.html">Edições</a></li>
+                <li><a href="#cronograma">Cronograma</a></li>
+                <li><a href="#pre-venda">Pré-Venda</a></li>
+                <li> <button onclick="toggleTheme()" class="btn-theme-toggle" title="Alternar tema">
+                        <i id="theme-icon" class="bi bi-moon-fill"></i>
+                </button></li>
+            </ul>
+        </nav>
+        <div class="user-controls">
+            <a id="loginBtn" href="Tela_Login.html" class="btn-login" title="Login">
+                <i id="loginIcon" class="bi bi-box-arrow-in-right"></i>
+                <span id="userName">
+                </span>
+            </a>
+            <button id="logoutBtn" class="btn-logout" title="Sair" style="display: none;">
+                <i class="bi bi-box-arrow-left"></i> Sair
+            </button>
+        </div>
+        <button onclick="toggleTheme()" class="btn-theme-toggle" title="Alternar tema">
+            <i id="theme-icon" class="bi bi-moon-fill"></i>
+        </button>
+    </div>
+</header>
+    <section class="hero-site" id="eldoria">
+        <!-- Partículas de poeira incorporadas diretamente no HTML -->
+        <div class="dust-particles">
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+            <div class="dust-particle"></div>
+        </div>
+
+        <div class="interface">
+            <div class="txt-hero">
+                <h1>Legends of <span>Eldoria</span></h1>
+                <p>Forje seu destino, conquiste reinos, torne-se uma lenda
+                    <span id="span-animaçao"></span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="vantagens" id="caracteristicas">
+        <div class="interface">
+            <article class="items-container">
+                <div class="txt-items">
+                    <h3><span>Mundo Medieval</span> <br> Vivo</h3>
+                    <p>Explore vastas terras que incluem florestas encantadas, montanhas nevadas, cidades fortificadas e ruínas ancestrais. Cada região possui sua própria história, facções e criaturas únicas. O ciclo dia/noite e as estações do ano afetam o comportamento dos NPCs, a disponibilidade de recursos e desbloqueiam eventos especiais, garantindo que cada jornada seja única.</p>
+                </div>
+
+                <div class="img-items">
+                    <img src="images/medieval-world.jpg" alt="Mundo Medieval Vivo">
+                </div>
+            </article>
+            
+            <article class="items-container">
+                <div class="img-items">
+                    <img src="images/combat-system.png" alt="Sistema de Combate Tático">
+                </div>
+                 
+                <div class="txt-items">
+                    <h3><span>Sistema de Combate</span> <br> Tático</h3>
+                    <p>Domine armas, magias e habilidades únicas em combates estratégicos baseados em classes. Escolha entre 8 classes distintas, incluindo Cavaleiro, Arqueiro, Mago, Clérigo, Druida, Assassino, Bárbaro e Paladino. Cada classe possui três árvores de talentos que permitem personalizar seu estilo de jogo. Combine ataques e habilidades em tempo real para derrotar inimigos e chefes desafiadores.</p>
+                </div>
+            </article>
+
+            <article class="items-container">
+                <div class="txt-items">
+                    <h3><span>Guildas e</span> <br> Alianças</h3>
+                    <p>Forme guildas poderosas, construa fortalezas e participe de guerras territoriais épicas. Recrute membros, estabeleça hierarquias e desenvolva sua própria economia. Conquiste territórios estratégicos para obter recursos exclusivos e vantagens em batalha. Forme alianças com outras guildas para enfrentar ameaças maiores ou declare guerra para expandir seu domínio. O sistema político dinâmico permite que jogadores assumam papéis de liderança e influenciem o mundo de Eldoria.</p>
+                </div>
+
+                <div class="img-items">
+                    <img src="images/guilds-alliances.jpg" alt="Guildas e Alianças">
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="chat" id="pre-venda">
+        <div class="interface">
+            <h3>Pré-venda<span>Disponível Agora!</span></h3>
+            <p>Garanta seu lugar no Beta Fechado e receba a arma lendária "Lâmina do Destino"</p>
+            <a href="Tela_PreVenda.html">
+                <button>Reservar Agora</button>
+            </a>
+        </div>
+
+        <div class="overlay"></div>
+    </section>
+    
+    <section class="como-funciona" id="cronograma">
+        <div class="interface">
+            <div class="txt-funciona">
+                <h3>Cronograma <span>de Lançamento</span></h3>
+            </div>
+            
+            <div class="instrucoes">
+                <article class="instru-box">
+                    <div class="img-instru-box">
+                        <img src="images/beta-icon.png" alt="Beta Fechado">
+                    </div>
+
+                    <div class="txt-instru-box">
+                        <h4>Beta Fechado<span> Agosto 2025</span></h4>
+                        <p>Seja um dos primeiros a explorar Eldoria! Participe do Beta Fechado e ajude a moldar o futuro do jogo com seu feedback valioso. Acesso garantido para todos os compradores da pré-venda.</p>
+                    </div>
+                </article>
+
+                <article class="instru-box">
+                    <div class="img-instru-box">
+                        <img src="images/early-access-icon.png" alt="Acesso Antecipado">
+                    </div>
+
+                    <div class="txt-instru-box">
+                        <h4>Acesso Antecipado <span> Outubro 2025</span></h4>
+                        <p>Mergulhe no mundo completo de Legends of Eldoria antes do lançamento oficial. Explore todas as regiões, experimente o sistema de progressão completo e desbloqueie recompensas exclusivas.</p>
+                    </div>
+                </article>
+
+                <article class="instru-box">
+                    <div class="img-instru-box">
+                        <img src="images/launch-icon.png" alt="Lançamento Oficial">
+                    </div>
+
+                    <div class="txt-instru-box">
+                        <h4>Lançamento Oficial <span>Dezembro 2025</span></h4>
+                        <p>A experiência definitiva de Legends of Eldoria chega a todas as plataformas. Junte-se a milhões de aventureiros na maior jornada medieval já criada. Disponível para PC, PlayStation 5 e Xbox Series X|S.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    
+    <section class="sobre" id="historia">
+        <div class="interface">
+            <div class="flex">
+                <div class="txt-sobre">
+                    <h2>A Lenda de Eldoria<span> Uma Era de Heróis</span></h2>
+                    <p>Há mil anos, o reino próspero de Eldoria era unificado sob o comando do Rei Thorne, o Justo. As cinco grandes casas - Solaris, Lunaris, Terravale, Aquamar e Ventus - viviam em harmonia, protegendo as fronteiras do reino contra as ameaças das terras selvagens. Porém, com a morte misteriosa do rei, uma disputa pelo trono dividiu o reino na Grande Guerra dos Cinco Reinos.
+                    
+                    Por séculos, os reinos fragmentados lutaram entre si, enfraquecendo as defesas mágicas que mantinham as criaturas das sombras contidas. Agora, o antigo dragão Morthax, que havia sido aprisionado pelos primeiros magos de Eldoria, despertou de seu sono milenar. Com seu exército de sombras, o dragão ameaça consumir todo o reino em trevas eternas.
+                    
+                    Os jogadores assumem o papel de heróis emergentes, descendentes das antigas linhagens nobres ou aventureiros de origens humildes, todos unidos pelo destino para restaurar a paz em Eldoria. Guiados pelos últimos membros da Ordem dos Guardiões, você deve dominar as artes da guerra e da magia, forjar alianças entre os reinos divididos, e desvendar os segredos do seu próprio passado, que está misteriosamente conectado ao destino de Eldoria.
+                    
+                    Em sua jornada, você enfrentará criaturas lendárias, explorará masmorras esquecidas, e tomará decisões que moldarão não apenas seu próprio caminho, mas o futuro de todo o reino. O tempo está se esgotando. Morthax cresce em poder a cada dia, e apenas você, como um verdadeiro herói de Eldoria, pode unir os reinos e enfrentar a escuridão que ameaça engolir o mundo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="interface">
+            <section class="top-footer">
+                <div class="flex2">
+                    <ul>
+                        <a href="#" class="instagram-btn">
+                            <li>
+                                <span class="icon"><i class="bi bi-instagram"></i></span>
+                                <span class="txt-button">AncientForge</span>
+                            </li>
+                        </a>
+
+                        <a href="#" class="tiktok-btn">
+                            <li>
+                                <span class="icon"><i class="bi-tiktok"></i></span>
+                                <span class="txt-button">AncientForge</span>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="middle-footer">
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Serviço</a>
+            </section>
+
+            <section class="bottom-footer">
+                <p>Ancient Forge Studios &copy; 2025 - Todos os direitos reservados</p>
+            </section>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            const usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+            const loginBtn = document.getElementById("loginBtn");
+            const loginIcon = document.getElementById("loginIcon");
+
+            if (usuarioLogado) {
+                loginBtn.href = "Tela_Perfil.html"; // página de perfil
+                loginBtn.title = "Perfil";
+                loginIcon.className = "bi bi-person-circle";
+            }
+        });
+        // Controlar abertura/fechamento da barra lateral
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+        document.querySelector('.sidebar').classList.toggle('open');
+    });
+
+    // Fechar a barra lateral ao clicar em um link
+    document.querySelectorAll('.sidebar a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.querySelector('.sidebar').classList.remove('open');
+        });
+    });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
