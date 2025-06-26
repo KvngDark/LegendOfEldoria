@@ -155,7 +155,7 @@ header .btn-contato button {
 
 section.hero-site {
     height: 100vh;
-    background-image: url('images/hero-background.jpg');
+    background-image: url('hero-background.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
